@@ -1,12 +1,13 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:http_get_response_demo/IModelDelegate.dart';
 import 'package:http_get_response_demo/model/cart_model.dart';
 
 class ApiService {
-  static String url = "https://dummyjson.com/carts";
+ // static String url = "https://dummyjson.com/carts";
   Future<List<Cart>> getData() async {
-    var response = await http.get(Uri.parse(url));
+    var response = await http.get(Uri.parse(IModeldelegate.cartUrl));
     if (response.statusCode == 200) {
       final data = response.body;
       final jsonData = json.decode(data);

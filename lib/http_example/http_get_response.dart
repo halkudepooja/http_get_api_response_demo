@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:http_get_response_demo/IModelDelegate.dart';
 import 'package:http_get_response_demo/model/user.dart';
 
 
@@ -22,8 +23,8 @@ class _Http_Get_ExampleState extends State<Http_Get_Example> {
   /// and returned.
   Future<List<User>> getRequest() async {
     //replace your restFull API here.
-    String url = "https://jsonplaceholder.typicode.com/posts";
-    final response = await http.get(Uri.parse(url));
+   // String url = "https://jsonplaceholder.typicode.com/posts";
+    final response = await http.get(Uri.parse(IModeldelegate.postUrl));
 
     var responseData = json.decode(response.body);
 
